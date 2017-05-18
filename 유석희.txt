@@ -1,0 +1,76 @@
+1. Oracle 홈페이지에서 java SE Development Kit(JDK)를 설치한다.
+	라이센스에 동의 한 후 자신에게 맞는 버전의 jdk를 내려받은 후 기본설치한다.
+
+2. http://ant.apache.org/bindownload.cgi 에 접속해서 Apache Ant를 다운로드한다.
+
+3. c:드라이브에 hybridApp 폴더를 만들고 Apache Ant 다운받은 zip 파일의 압축을 해제합니다.
+
+4. Android Studio 홈페이지에서 Android studio를 다운받아 설치합니다.
+
+5. 실행 후 툴바 상단의 SDK-Manager를 실행합니다.
+
+6. SDK 설정을 합니다.
+	SDK Platforms
+		Android 7.1.1(Nougat)
+		- Android SDK Platform 25
+		- Sources for Android 25
+		- Google APIs ARM EAVI v7a System Image
+		- Google APIs Intel x86 Atom System Image
+
+	SDK Tools
+		Android SDK Build-Tools
+		Android Emulator
+		Android SDK Platform-tools
+		Android SDK Tools
+
+		Google USB Drivers
+		Intel x86 Emulator Accelerator(HAXM installer)
+		Support Repository
+		- Android Support Repository
+		- Google Repository
+
+7. 환경변수 설정을 쉽게하기위해 설치경로를 변경합니다. (Edit 클릭)
+
+8. 아래의 경로를 C:\hybridApp\android-sdk 로 변경합니다.
+
+9. 컴퓨터 - 속성 - 고급시스템속성 - 환경변수
+	새로만들기 : JAVA_HOME	, 변수값 : C:\program file\java\jdk1.xx.x_xx
+	새로만들기 : ANDROID_HOME,변수값 : c:\hybridApp\android-sdk
+
+	편집 : Path	%JAVA_HOME%\bin;
+			%ANDROID_HOME%\tools;
+			%ANDROID_HOME%\platform-tools;
+			%ANDROID_HOME%\build-tools;
+			c:\hybridApp\apache-ant-1.xx.x\bin;
+
+10. node.js를 다운받아 설치합니다.
+
+11. 시작 - 모든프로그램 - Node.js - Node.js command prompt 실행
+
+12. mpn install -g phonegap 엔터
+	phonegap이 설치됩니다.
+13. mpn install -g cordova 엔터
+	cordova가 설치됩니다.
+
+14. cd c:\ 엔터
+
+15. md testProject 엔터
+
+16. cd testProject 엔터
+
+17. cordova create test com.example.test testApp -d
+	testProject에 test폴더를 만들고 com.example.test(앱식별자)와 testApp 프로젝트를 생성합니다.
+
+18. cordova platform add android 엔터
+
+19. 안드로이드 스튜디오에서 상단의 AVD Manager 클릭
+
+20. crate를 눌러 원하는 가상 단말기 선택
+
+21. AVD Name 설정. 기억해둔다
+
+22. node.js command로 돌아가서 cordova emulate --target=avdName android 엔터.
+	해당 위치에 avdName의 이름을 가진 android 가상단말기를 emulate한다.
+
+23. 이후부터는 cordova run android로 실행한다.
+
